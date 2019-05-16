@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="de">
+<head>
+    <title>Klaro!</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://fonts.googleapis.com/css?family=Damion" rel="stylesheet">
+
+    <link rel="icon" type="image/png" href="https://s3.eu-central-1.amazonaws.com/istgradeeskalation.de/favicon.png">
+
+    <style>
+        html {
+            background-color: #57F59E;
+        }
+
+        div {
+            display: block;
+            margin: 10vh auto 0 auto;
+            text-align: center;
+            color: white;
+            font-size: 15vw;
+            font-weight: 500;
+            font-family: "Damion", sans-serif
+        }
+    </style>
+</head>
+<body>
+<div id="klaro"></div>
+
+<script type="text/javascript">
+    let words = ["Klaro", "Natürlich", "Immer", "Wenig überraschend", "Selbstverständlich", "sicher", "gewiss", "sicherlich", "logischerweise", "wen wundert's"];
+    document.getElementById("klaro").textContent = words[Math.floor(Math.random() * words.length)];
+</script>
+</body>
+</html>

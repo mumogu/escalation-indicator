@@ -1,0 +1,18 @@
+language: python
+python:
+  - "3.5"
+cache: pip
+install:
+  - pip install awscli
+deploy:
+  on:
+    branch: master
+  provider: s3
+  access_key_id: $AWS_ACCESS_KEY_ID
+  secret_access_key: $AWS_SECRET_ACCESS_KEY
+  bucket: istgradeeskalation.de
+  region: eu-central-1
+  skip_cleanup: true
+  local_dir: src
+  cache_control: "max-age=10"
+  acl: public_read
