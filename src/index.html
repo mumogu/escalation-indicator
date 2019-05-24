@@ -11,28 +11,47 @@
 
     <link rel="icon" type="image/png" href="favicon.png">
 
-    <style>
-        html {
-            background-color: #57F59E;
+    <style type="text/css">
+
+        div#style-container {
+          position: fixed;
+          height: 100%;
+          width: 100%;
+          color: white;
         }
 
-        div {
+        div#style-container.escalation {
+          background-color: #57F59E;
+        }
+
+        div#klaro  {
             display: block;
             margin: 10vh auto 0 auto;
             text-align: center;
-            color: white;
+
             font-size: 15vw;
             font-weight: 500;
             font-family: "Damion", sans-serif
         }
+         div#style-container.escalationEnded{
+          background-color: #EB6B6B;
+        }
     </style>
 </head>
 <body>
-<div id="klaro"></div>
-
+  <div id="style-container" class="escalation">
+    <div id="klaro"></div>
+  </div>
 <script type="text/javascript">
     let words = ["Klaro", "Natürlich", "Immer", "Wenig überraschend", "Selbstverständlich", "sicher", "gewiss", "sicherlich", "logischerweise", "wen wundert's"];
-    document.getElementById("klaro").textContent = words[Math.floor(Math.random() * words.length)];
+    let wordsEscalationEnded =["Nein", "Noch nicht", "hab ein wenig Geduld", "über den Punkt sind wir hinaus","komm morgen wieder", "weißt du mehr?", "...wait for it", "we don't go there anymore"];
+    if (Date.now() < 1558690651347) {
+      document.getElementById("klaro").textContent = words[Math.floor(Math.random() * words.length)];
+    } else {
+      document.getElementById("klaro").textContent = wordsEscalationEnded[Math.floor(Math.random() * wordsEscalationEnded.length)];
+      document.getElementById("style-container").classList.remove("escalation");
+      document.getElementById("style-container").classList.add("escalationEnded");
+    }
 </script>
 </body>
 </html>
