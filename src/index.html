@@ -11,9 +11,15 @@
 
     <style type="text/css">
 
-         div#style-container.escalation {
-          background-color: #57F59E;
+        div#style-container {
+          position: fixed;
+          height: 100%;
+          width: 100%;
           color: white;
+        }
+
+        div#style-container.escalation {
+          background-color: #57F59E;
         }
 
         div#klaro  {
@@ -26,8 +32,7 @@
             font-family: "Damion", sans-serif
         }
          div#style-container.escalationEnded{
-          background-color: red;
-          color: black;
+          background-color: #EB6B6B;
         }
     </style>
 </head>
@@ -38,11 +43,12 @@
 <script type="text/javascript">
     let words = ["Klaro", "Natürlich", "Immer", "Wenig überraschend", "Selbstverständlich", "sicher", "gewiss", "sicherlich", "logischerweise", "wen wundert's"];
     let wordsEscalationEnded =["Nein", "Noch nicht", "hab ein wenig Geduld", "über den Punkt sind wir hinaus","komm morgen wieder", "weißt du mehr?", "...wait for it", "we don't go there anymore"];
-    if (Date.now() < 1558632587261) {
+    if (Date.now() < 1558690651347) {
       document.getElementById("klaro").textContent = words[Math.floor(Math.random() * words.length)];
     } else {
       document.getElementById("klaro").textContent = wordsEscalationEnded[Math.floor(Math.random() * wordsEscalationEnded.length)];
-      document.getElementById("style-container").class = "escalationEnded";
+      document.getElementById("style-container").classList.remove("escalation");
+      document.getElementById("style-container").classList.add("escalationEnded");
     }
 </script>
 </body>
